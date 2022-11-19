@@ -1,3 +1,5 @@
+INCLUDE config.ink
+
 Once upon a time...
 
  * There were two choices.

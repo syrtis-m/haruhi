@@ -1,5 +1,4 @@
-EXTERNAL setStoryVar(key, value) //this is a c# func. key is string, value is bool
-
+INCLUDE config.ink
 
 hey bud, you're stuck in a time loop
 if you touch something, you reset
@@ -7,4 +6,7 @@ if you touch something, you reset
     don't worry about it
 * ["..okay"]
     yeah it sucks
+-
 ~ setStoryVar("started", true)
+VAR started = ""
+~ started = getStoryVar("started")
