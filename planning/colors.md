@@ -4,6 +4,7 @@ midnight blue #272f4a
 pacific blue #3eb5c0
 orchard #ECB0E1
 bone #F9F9EE
+floor #6b7184
 
 ### basics
 charcoal #36454F
