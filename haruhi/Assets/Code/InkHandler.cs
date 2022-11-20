@@ -25,7 +25,7 @@ public class InkHandler : MonoBehaviour
         _textOutput = UIHandler.instance.getTextPaneText();
     }
 
-    public void configStory()
+    private void configStory()
     {
         //error handling
         _inkStory.onError += (msg, type) => {
@@ -40,11 +40,13 @@ public class InkHandler : MonoBehaviour
         
         _inkStory.BindExternalFunction("getStoryVar", (string key) => mind.instance.getStoryVar(key));
         
+        _inkStory.BindExternalFunction("timeloop", () => mind.instance.invokeTimeloop());
+        
         //get story vars in ink by calling 
     }
 
     public void StartTalk(TextAsset inkAsset)
-    {//give inkhandler the compiled JSON version of an ink file
+    {//give inkhandler the compiled JSON version of an ink file. this is what you call to start dialog
         
         //set up the story
         _inkStory = new Story(inkAsset.text);
@@ -62,14 +64,14 @@ public class InkHandler : MonoBehaviour
     }
     
     public void Continue()
-    {
+    {//ui "continue" button uses this
         _continueFlag = true;
     }
     
     public void Choice(int choice)
-    {
+    {//ui choice buttons use this
         Debug.Log("Choice() Started");
-        UIHandler.instance.choices.SetActive(false);
+        UIHandler.instance.hideChoices();
         _inkStory.ChooseChoiceIndex(choice);
         if (_inkStory.canContinue)
         {
@@ -78,7 +80,7 @@ public class InkHandler : MonoBehaviour
     }
 
     private IEnumerator Talk()
-    {//prints ink until talk
+    {//this handles dialog, until there's a choice or dialog ends.
         Debug.Log("Talk() Started");
         UIHandler.instance.continueButton.SetActive(true);
         // talk
@@ -88,9 +90,9 @@ public class InkHandler : MonoBehaviour
             if (line != "")
             {
                 _textOutput.text = line;
-                Debug.Log(line);
+                //Debug.Log(line);
             
-                yield return new WaitUntil(() => _continueFlag == true);
+                yield return new WaitUntil(() => _continueFlag);
             }
             _continueFlag = false;
         }
@@ -99,22 +101,26 @@ public class InkHandler : MonoBehaviour
         if( _inkStory.currentChoices.Count > 0 )
         {
             var line = "";
-            for (int i = 0; i < _inkStory.currentChoices.Count; ++i) {
+            var choiceCount = _inkStory.currentChoices.Count;
+            for (int i = 0; i < choiceCount; ++i) {
                 Choice choice = _inkStory.currentChoices [i];
-                line += "Choice " + (i + 1) + ". " + choice.text + "<br>";
-                Debug.Log(line);
+                line += (i + 1) + ". " + choice.text + "<br>";
+                //Debug.Log(line);
             }
 
             _textOutput.text = line;
             UIHandler.instance.continueButton.SetActive(false);
-            UIHandler.instance.choices.SetActive(true);
-            Debug.Log("Talk() finished");
+            for (int i = 0; i < choiceCount; i++)
+            {//activate as many choice buttons as there are choices. currently supports up to three choices.
+                UIHandler.instance.choices[i].SetActive(true);
+            }
             yield return null;
         }
         else
         {
             Time.timeScale = 1.0f;
             UIHandler.instance.hideTextPane();
+            Debug.Log("Talk() finished");
             yield return null;
         } 
     }
