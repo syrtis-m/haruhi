@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
     public static UIHandler instance;
+    public string mainMenu;
     public GameObject textPane;
     public GameObject continueButton;
     public List<GameObject> choices;
@@ -53,6 +55,11 @@ public class UIHandler : MonoBehaviour
     public void StoryChoice(int choice)
     {
         _currentStory.Choice(choice);
+    }
+
+    public void endGame()
+    {
+        SceneManager.LoadScene(mainMenu);
     }
 
     public void DebugStoryVar()

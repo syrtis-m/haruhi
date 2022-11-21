@@ -4,10 +4,10 @@
 ~ machine_manual = getStoryVar("machine_manual")
 
 
-~ time_machine_computer_on = getStoryVar("time_machine_computer_on")
+~ endgame_computer = getStoryVar("endgame_computer")
 
 there's a thick spiral-bound manual laying on top of a computer server.
-{not time_machine_computer_on:the computer is quiet, off.}
+{not endgame_computer:the computer is quiet, off.}
 + [pick up the manual]
     -> menu
     

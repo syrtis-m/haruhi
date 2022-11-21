@@ -28,8 +28,6 @@ public class InkHandler : MonoBehaviour
     {
         _textOutput = UIHandler.instance.getTextPaneText();
         
-        
-        
         //configure the story
         configStory();
     }
@@ -50,6 +48,8 @@ public class InkHandler : MonoBehaviour
         _inkStory.BindExternalFunction("getStoryVar", (string key) => mind.instance.getStoryVar(key));
         
         _inkStory.BindExternalFunction("timeloop", () => mind.instance.invokeTimeloop());
+        
+        _inkStory.BindExternalFunction("endGame", () => UIHandler.instance.endGame());
 
         //get story vars in ink by calling 
     }
@@ -108,16 +108,16 @@ public class InkHandler : MonoBehaviour
             var choiceCount = _inkStory.currentChoices.Count;
             for (int i = 0; i < choiceCount; ++i) {
                 Choice choice = _inkStory.currentChoices [i];
-                line += (i + 1) + ". " + choice.text + "<br>";
+                GameObject button = UIHandler.instance.choices[i];
+                button.SetActive(true);
+                button.GetComponentInChildren<TMP_Text>().text = (i + 1) + ": " + choice.text + "<br>";
+                //line += (i + 1) + ": " + choice.text + "<br>";
                 //Debug.Log(line);
             }
 
             _textOutput.text = line;
             UIHandler.instance.continueButton.SetActive(false);
-            for (int i = 0; i < choiceCount; i++)
-            {//activate as many choice buttons as there are choices. currently supports up to three choices.
-                UIHandler.instance.choices[i].SetActive(true);
-            }
+            
             yield return null;
         }
         else
