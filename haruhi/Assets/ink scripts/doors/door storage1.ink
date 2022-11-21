@@ -1,1 +1,6 @@
-INCLUDE ../config.ink
+=== door_storage1 ===
+
+
+
+
+-> DONE

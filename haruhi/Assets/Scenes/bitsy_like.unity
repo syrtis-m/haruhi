@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 3584012}
   - component: {fileID: 3584015}
   m_Layer: 0
-  m_Name: zapper
+  m_Name: transmitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,10 +266,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3584010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaa061575b4b41988fa4f1af195c73bd, type: 3}
+  m_Script: {fileID: 11500000, guid: f5b1323096942064098371e3eefcce7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkAsset: {fileID: 4900000, guid: da6182d790c44ac43ac990aac3fc8e3b, type: 3}
+  inkKnot: time_machine_transmitter
+  toggleStoryVar_Key: 
+  starts_on: []
+  starts_off: []
+  sprite_starts_on: {fileID: -53562626, guid: 958e6e1ddadb9c942af8d18ad29034c2, type: 3}
+  sprite_starts_off: {fileID: 1776550680, guid: 958e6e1ddadb9c942af8d18ad29034c2, type: 3}
 --- !u!1 &46973622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,12 +1144,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1483358083}
     m_Modifications:
     - target: {fileID: 645647944, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
+      propertyPath: inkKnot
+      value: door_storage
+      objectReference: {fileID: 0}
+    - target: {fileID: 645647944, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
       propertyPath: inkAsset
       value: 
       objectReference: {fileID: 4900000, guid: 262ea38c0fbd8cc46bfaa260f798dcf8, type: 3}
     - target: {fileID: 645647944, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
       propertyPath: toggleStoryVar_Key
-      value: door_storage
+      value: door_storage_toggle
       objectReference: {fileID: 0}
     - target: {fileID: 2252918060261914475, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
       propertyPath: m_Name
@@ -1253,7 +1262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa061575b4b41988fa4f1af195c73bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkAsset: {fileID: 4900000, guid: 902b2a595f364d84c8d3b3420f8e818e, type: 3}
+  inkKnot: warehouse_computer
 --- !u!61 &421853835
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28317,12 +28326,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1483358083}
     m_Modifications:
     - target: {fileID: 645647944, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
+      propertyPath: inkKnot
+      value: door_storage1
+      objectReference: {fileID: 0}
+    - target: {fileID: 645647944, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
       propertyPath: inkAsset
       value: 
       objectReference: {fileID: 4900000, guid: 3d54d5f7fa8245747b9c21a2fd82d705, type: 3}
     - target: {fileID: 645647944, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
       propertyPath: toggleStoryVar_Key
-      value: door_storage1
+      value: door_storage1_toggle
       objectReference: {fileID: 0}
     - target: {fileID: 2252918060261914475, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
       propertyPath: m_Name
@@ -28655,7 +28668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b1323096942064098371e3eefcce7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkAsset: {fileID: 4900000, guid: 3b7734a43a3145f44a80b4054ce74d43, type: 3}
+  inkKnot: boiler
   toggleStoryVar_Key: pipes_state
   starts_on:
   - {fileID: 931089375}
@@ -28854,6 +28867,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1483358083}
     m_Modifications:
+    - target: {fileID: 645647944, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
+      propertyPath: inkKnot
+      value: door_office
+      objectReference: {fileID: 0}
+    - target: {fileID: 645647944, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
+      propertyPath: toggleStoryVar_Key
+      value: door_office_toggle
+      objectReference: {fileID: 0}
     - target: {fileID: 2252918060261914475, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
       propertyPath: m_Name
       value: door_office
@@ -32827,7 +32848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa061575b4b41988fa4f1af195c73bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkAsset: {fileID: 4900000, guid: d7c0706081f3ba54cbf1bbe822d46892, type: 3}
+  inkKnot: library_backroom_note
 --- !u!212 &829429183
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34111,7 +34132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa061575b4b41988fa4f1af195c73bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkAsset: {fileID: 4900000, guid: 303b6176f0b6371459a9009439edac55, type: 3}
+  inkKnot: hidden_library_note
 --- !u!1 &1094353946
 GameObject:
   m_ObjectHideFlags: 0
@@ -34678,7 +34699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa061575b4b41988fa4f1af195c73bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkAsset: {fileID: 4900000, guid: afcfaf2a1894a4d42bc65142b1c7e08f, type: 3}
+  inkKnot: machine_workroom
 --- !u!1 &1356308679
 GameObject:
   m_ObjectHideFlags: 0
@@ -73640,12 +73661,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 645647944, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
+      propertyPath: inkKnot
+      value: door_generators
+      objectReference: {fileID: 0}
+    - target: {fileID: 645647944, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
       propertyPath: inkAsset
       value: 
       objectReference: {fileID: 4900000, guid: 77f677b134dea1e48b3083dd80a95efb, type: 3}
     - target: {fileID: 645647944, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
       propertyPath: toggleStoryVar_Key
-      value: door_generators
+      value: door_generators_toggle
       objectReference: {fileID: 0}
     - target: {fileID: 2252918060261914475, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
       propertyPath: m_Name
@@ -73770,7 +73795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa061575b4b41988fa4f1af195c73bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkAsset: {fileID: 4900000, guid: ef1427340e602b740a79b41ebcc6dd4c, type: 3}
+  inkKnot: computer_rand_office
 --- !u!61 &1421943054
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -74146,7 +74171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa061575b4b41988fa4f1af195c73bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkAsset: {fileID: 4900000, guid: e10cec04e739e104ab984885098fd5b4, type: 3}
+  inkKnot: time_machine_power
 --- !u!1 &1670386257
 GameObject:
   m_ObjectHideFlags: 0
@@ -75198,10 +75223,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1775651181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaa061575b4b41988fa4f1af195c73bd, type: 3}
+  m_Script: {fileID: 11500000, guid: f5b1323096942064098371e3eefcce7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkAsset: {fileID: 4900000, guid: 871b54903c372c54786a7aba84e8dcc1, type: 3}
+  inkKnot: time_machine_computer
+  toggleStoryVar_Key: 
+  starts_on: []
+  starts_off: []
+  sprite_starts_on: {fileID: 998709689, guid: 958e6e1ddadb9c942af8d18ad29034c2, type: 3}
+  sprite_starts_off: {fileID: -1785454506, guid: 958e6e1ddadb9c942af8d18ad29034c2, type: 3}
 --- !u!1 &1785181812
 GameObject:
   m_ObjectHideFlags: 0
@@ -75249,7 +75279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa061575b4b41988fa4f1af195c73bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkAsset: {fileID: 4900000, guid: 5f4dddbc24557cf4db39f5e07b49976c, type: 3}
+  inkKnot: office_computer
 --- !u!61 &1785181815
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75797,7 +75827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa061575b4b41988fa4f1af195c73bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkAsset: {fileID: 4900000, guid: 9712c8ee68ae8b54799b45a9218b7e97, type: 3}
+  inkKnot: warehouse_note
 --- !u!212 &1963157779
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -76112,7 +76142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa061575b4b41988fa4f1af195c73bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkAsset: {fileID: 4900000, guid: 871b54903c372c54786a7aba84e8dcc1, type: 3}
+  inkKnot: time_machine_manual
 --- !u!212 &2067634837
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -76435,15 +76465,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 54685452812699923, guid: 3ad9aaf7d76a34d40acd0d056c3006df, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -530
+      value: -79.91354
       objectReference: {fileID: 0}
     - target: {fileID: 54685452812699924, guid: 3ad9aaf7d76a34d40acd0d056c3006df, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 54685453097346855, guid: 3ad9aaf7d76a34d40acd0d056c3006df, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 54685453321278820, guid: 3ad9aaf7d76a34d40acd0d056c3006df, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54685453674804724, guid: 3ad9aaf7d76a34d40acd0d056c3006df, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -135.48654
       objectReference: {fileID: 0}
     - target: {fileID: 54685453674804725, guid: 3ad9aaf7d76a34d40acd0d056c3006df, type: 3}
       propertyPath: m_IsActive
@@ -76459,7 +76497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7661585715805779422, guid: 3ad9aaf7d76a34d40acd0d056c3006df, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -474.6
+      value: -24.51355
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -76540,12 +76578,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1483358083}
     m_Modifications:
     - target: {fileID: 645647944, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
+      propertyPath: inkKnot
+      value: door_library
+      objectReference: {fileID: 0}
+    - target: {fileID: 645647944, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
       propertyPath: inkAsset
       value: 
       objectReference: {fileID: 4900000, guid: 39662c4acddf7664b9424050f84a1950, type: 3}
     - target: {fileID: 645647944, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
       propertyPath: toggleStoryVar_Key
-      value: door_library
+      value: door_library_toggle
       objectReference: {fileID: 0}
     - target: {fileID: 2252918060261914475, guid: 0cceac2efcfa15d4aa51787c0deb8fc5, type: 3}
       propertyPath: m_Name
@@ -77011,6 +77053,10 @@ PrefabInstance:
       value: intro note
       objectReference: {fileID: 0}
     - target: {fileID: 5453118742044953322, guid: 145e1c6cb762c3e41b3ca76cacca5a40, type: 3}
+      propertyPath: inkKnot
+      value: intro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453118742044953322, guid: 145e1c6cb762c3e41b3ca76cacca5a40, type: 3}
       propertyPath: inkAsset
       value: 
       objectReference: {fileID: 4900000, guid: 09bff01e3d0faeb4dbd3517626bbb3fd, type: 3}
@@ -77025,6 +77071,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7545796115148587905, guid: 88d83935426afa44597e46a166301420, type: 3}
+      propertyPath: inkAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: 09bff01e3d0faeb4dbd3517626bbb3fd, type: 3}
     - target: {fileID: 7545796115148587906, guid: 88d83935426afa44597e46a166301420, type: 3}
       propertyPath: m_RootOrder
       value: 5

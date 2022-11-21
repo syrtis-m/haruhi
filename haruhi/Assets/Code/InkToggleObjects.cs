@@ -7,7 +7,7 @@ public class InkToggleObjects : MonoBehaviour
 {
     //this should act like collideToInk but it also allows you to toggle a list of objects off and a list of objects on.
     
-    public TextAsset inkAsset;
+    public string inkKnot;
     
     public string toggleStoryVar_Key;
     
@@ -40,7 +40,7 @@ public class InkToggleObjects : MonoBehaviour
     {
         if (col.GetComponent<Player>())
         {//case where player collided with it
-            InkHandler.instance.StartTalk(inkAsset);
+            InkHandler.instance.StartTalk(inkKnot);
         }
     }
 

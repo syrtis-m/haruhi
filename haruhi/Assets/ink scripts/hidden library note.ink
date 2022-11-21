@@ -1,6 +1,5 @@
-INCLUDE config.ink
+=== hidden_library_note ===
 
-VAR library_note = ""
 ~ library_note = getStoryVar("library_note")
 
 there's something laying underneath one of the bookshelves
@@ -13,4 +12,4 @@ there's something laying underneath one of the bookshelves
 * {library_note} [skip it]
     ~ setStoryVar("library_note", true)
 -
-->END
+-> DONE

@@ -9,6 +9,8 @@ public class InkHandler : MonoBehaviour
 {
     public static InkHandler instance;
 
+    public TextAsset inkAsset;
+
     // The ink story that we're wrapping
     private Story _inkStory;
     
@@ -18,11 +20,18 @@ public class InkHandler : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        //set up the story
+        _inkStory = new Story(inkAsset.text);
     }
 
     private void Start()
     {
         _textOutput = UIHandler.instance.getTextPaneText();
+        
+        
+        
+        //configure the story
+        configStory();
     }
 
     private void configStory()
@@ -41,18 +50,12 @@ public class InkHandler : MonoBehaviour
         _inkStory.BindExternalFunction("getStoryVar", (string key) => mind.instance.getStoryVar(key));
         
         _inkStory.BindExternalFunction("timeloop", () => mind.instance.invokeTimeloop());
-        
+
         //get story vars in ink by calling 
     }
 
-    public void StartTalk(TextAsset inkAsset)
-    {//give inkhandler the compiled JSON version of an ink file. this is what you call to start dialog
-        
-        //set up the story
-        _inkStory = new Story(inkAsset.text);
-        
-        //configure the story
-        configStory();
+    public void StartTalk(string knot)
+    {//start ink at a certain knot
         
         //set the continueFlag for the coroutine
         _continueFlag = false;
@@ -60,6 +63,7 @@ public class InkHandler : MonoBehaviour
         //pause the game and start the coroutine
         Time.timeScale = 0f;
         UIHandler.instance.showTextPane(this);
+        _inkStory.ChoosePathString(knot);
         StartCoroutine(Talk());
     }
     

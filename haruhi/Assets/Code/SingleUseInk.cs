@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SingleUseInk : MonoBehaviour
 {
-    public TextAsset inkAsset;
+    public string inkKnot;
     public bool used; //this makes sure it can only go off once
 
     private void Awake()
@@ -20,7 +20,7 @@ public class SingleUseInk : MonoBehaviour
         {//case where player collided with it
             if (!used)
             {
-                InkHandler.instance.StartTalk(inkAsset);
+                InkHandler.instance.StartTalk(inkKnot);
                 used = true;
             }
         }
