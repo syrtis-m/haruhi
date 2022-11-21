@@ -5,9 +5,11 @@
 === warehouse_computer ===
 
 there's a computer on the floor. it's unplugged.
-you plug the computer in.
-
--> diceroll
++[plug it in]
+    you plug the computer in.
+    -> diceroll
++[skip it]
+    ->DONE
 
 = diceroll
 

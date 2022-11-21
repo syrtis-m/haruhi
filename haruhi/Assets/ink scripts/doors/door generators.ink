@@ -5,11 +5,17 @@
 the door's locked. maybe try a password?
 + [MANUSCRIPT]
     nothing happens
+    ->done_loop
 + [PARCHMENT]
     nothing happens
+    ->done_loop
 + [INK]
     with a clunk, the door opens
     ~ setStoryVar("door_generators_toggle", true)
-    
-- ~ timeloop()
--> DONE
+    ->done_loop
++ [back]
+    ->DONE
+
+=done_loop
+~timeloop()
+->DONE

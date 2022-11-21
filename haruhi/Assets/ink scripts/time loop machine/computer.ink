@@ -23,7 +23,7 @@ yup, looks like the computer is working fine now.
 
 =no_info
 you probably should know the config information before you try to fix the computer
-->done
+->done_loop
 
 =already_fixed
 the computer's humming quietly

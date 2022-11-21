@@ -5,11 +5,17 @@
 the door's locked. maybe try a password?
 + [MELODIC OCTOPUS]
     nothing happens
+    ->done_loop
 + [WHITE ELEPHANT]
     with a clunk, the door opens
     ~ setStoryVar("door_office_toggle", true)
+    ->done_loop
 + [SOLID SNAKE]
     nothing happens
-- ~ timeloop()
+    ->done_loop
++ [back]
+    ->DONE
 
+=done_loop
+~timeloop()
 ->DONE

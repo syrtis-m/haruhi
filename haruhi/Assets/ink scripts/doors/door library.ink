@@ -4,12 +4,17 @@
 the door's locked. maybe try a password?
 + [JOYCE]
     nothing happens
+    ->done_loop
 + [SHELLY]
     nothing happens
+    ->done_loop
 + [EULER]
     with a clunk, the door opens
     ~ setStoryVar("door_library_toggle", true)
-    
-- ~ timeloop()
+    ->done_loop
++ [back]
+    ->DONE
 
--> DONE
+=done_loop
+~timeloop()
+->DONE
